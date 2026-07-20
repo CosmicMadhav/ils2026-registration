@@ -11,18 +11,15 @@
   body { font-family: 'Inter', sans-serif; background: #f7eeff; min-height: 100vh; color: #2c1a40; }
 
   .hero-logo-bar {
-    background: white;
-    padding: 14px 1.5rem;
+    background: white; padding: 14px 1.5rem;
     display: flex; align-items: center; justify-content: center;
-    gap: 24px; flex-wrap: wrap;
-    border-bottom: 3px solid #6a1794;
+    gap: 24px; flex-wrap: wrap; border-bottom: 3px solid #6a1794;
   }
   .hero-logos { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
 
   .hero {
     background: linear-gradient(135deg, #6a1794 0%, #b8005e 100%);
-    padding: 1.75rem 1.5rem 3rem;
-    text-align: center; color: white;
+    padding: 1.75rem 1.5rem 3rem; text-align: center; color: white;
   }
   .hero h1 { font-size: 1.55rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; }
   .hero .tagline { font-size: 13px; color: rgba(255,255,255,0.8); font-style: italic; margin-bottom: 1rem; }
@@ -46,9 +43,7 @@
   }
   .card-title svg { flex-shrink: 0; }
 
-  .round-tabs {
-    display: flex; gap: 8px; margin-bottom: 1.25rem;
-  }
+  .round-tabs { display: flex; gap: 8px; margin-bottom: 1.25rem; }
   .round-tab {
     flex: 1; padding: 9px 6px; border: 1.5px solid #ddc4f0;
     border-radius: 8px; font-size: 13px; font-weight: 600;
@@ -67,17 +62,9 @@
     color: white; border-radius: 20px; padding: 3px 12px;
     font-size: 11px; font-weight: 600; margin-bottom: 1rem;
   }
-  .female-badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    background: #fff0fa; color: #b8005e;
-    border: 1px solid #f0b0d8;
-    border-radius: 20px; padding: 3px 12px;
-    font-size: 11px; font-weight: 600; margin-bottom: 1rem;
-  }
   .optional-tag {
-    background: #f3eaff; color: #7c2ab0;
-    border: 1px solid #d9b8f5; border-radius: 20px;
-    padding: 2px 10px; font-size: 11px; font-weight: 500; margin-left: auto;
+    background: #f3eaff; color: #7c2ab0; border: 1px solid #d9b8f5;
+    border-radius: 20px; padding: 2px 10px; font-size: 11px; font-weight: 500; margin-left: auto;
   }
 
   .field-row { margin-bottom: 1rem; }
@@ -85,7 +72,7 @@
   label { display: block; font-size: 13px; font-weight: 500; color: #4a1b6e; margin-bottom: 5px; }
   .req { color: #b8005e; margin-left: 2px; }
 
-  input[type="text"], input[type="email"], input[type="tel"], select {
+  input[type="text"], input[type="email"], input[type="tel"], select, textarea {
     width: 100%; padding: 9px 12px;
     border: 1px solid #ddc4f0; border-radius: 8px;
     font-size: 14px; font-family: inherit; color: #2c1a40;
@@ -93,11 +80,12 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     appearance: none; -webkit-appearance: none;
   }
-  input:focus, select:focus {
+  textarea { resize: vertical; min-height: 80px; appearance: auto; -webkit-appearance: auto; }
+  input:focus, select:focus, textarea:focus {
     border-color: #8c3ec0; background: white;
     box-shadow: 0 0 0 3px rgba(140,62,192,0.12);
   }
-  input.error, select.error { border-color: #b8005e !important; background: #fff5f9 !important; }
+  input.error, select.error, textarea.error { border-color: #b8005e !important; background: #fff5f9 !important; }
 
   .select-wrap { position: relative; }
   .select-wrap::after {
@@ -116,13 +104,24 @@
   }
   .file-zone:hover { border-color: #8c3ec0; background: #f3e8ff; }
   .file-zone input[type="file"] {
-    position: absolute; inset: 0; opacity: 0;
-    cursor: pointer; width: 100%; height: 100%;
+    position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
   }
   .file-icon { width: 36px; height: 36px; margin: 0 auto 8px; color: #8c3ec0; }
   .file-zone .upload-label { font-size: 13px; color: #5c2b8a; font-weight: 500; }
   .file-zone .upload-hint { font-size: 11px; color: #9b7ab0; margin-top: 3px; }
   .file-name-display { display: none; font-size: 12px; color: #6a1794; font-weight: 600; margin-top: 6px; }
+
+  .track4-option {
+    border: 1.5px solid #ddc4f0; border-radius: 10px; padding: 12px 14px;
+    margin-bottom: 10px; cursor: pointer; background: #fdf8ff;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .track4-option:hover { border-color: #9b3ec4; background: #f5ecff; }
+  .track4-option.selected { border-color: #6a1794; background: #f3eaff; }
+  .track4-option input[type="radio"] { margin-top: 3px; flex-shrink: 0; accent-color: #6a1794; width:16px; height:16px; }
+  .track4-option-label { font-size: 13px; font-weight: 600; color: #4a1b6e; margin-bottom: 3px; }
+  .track4-option-desc { font-size: 12px; color: #7c5a9b; line-height: 1.5; }
 
   .submit-btn {
     width: 100%; padding: 14px;
@@ -138,8 +137,7 @@
   .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
 
   .spinner {
-    width: 18px; height: 18px;
-    border: 2px solid rgba(255,255,255,0.4);
+    width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.4);
     border-top-color: white; border-radius: 50%;
     animation: spin 0.7s linear infinite; display: none;
   }
@@ -156,8 +154,7 @@
   .note-box {
     background: #fdf0ff; border-left: 3px solid #b060e0;
     border-radius: 0 8px 8px 0; padding: 10px 14px;
-    font-size: 12px; color: #5c2b8a;
-    margin-bottom: 1rem; line-height: 1.6;
+    font-size: 12px; color: #5c2b8a; margin-bottom: 1rem; line-height: 1.6;
   }
   .info-banner {
     background: linear-gradient(135deg,#6a1794,#b8005e);
@@ -196,23 +193,29 @@
 
 <div class="form-container">
 
-  <!-- ROUND SELECTOR CARD -->
+  <!-- ROUND SELECTOR -->
   <div class="card">
     <div class="card-title">
       <svg width="18" height="18" fill="none" stroke="#b8005e" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
       Which Round Are You Registering For?
     </div>
     <div class="round-tabs">
-      <div class="round-tab active" id="tab-r1" onclick="setRound(1)">Round 1</div>
-      <div class="round-tab" id="tab-r2" onclick="setRound(2)">Round 2</div>
-      <div class="round-tab" id="tab-r3" onclick="setRound(3)">Round 3</div>
+      <div class="round-tab active" id="tab-r1" onclick="setRound(1)">
+        Round 1<br><span style="font-size:10px; font-weight:400; opacity:0.85;">1st Aug 2026</span>
+      </div>
+      <div class="round-tab" id="tab-r2" onclick="setRound(2)">
+        Round 2<br><span style="font-size:10px; font-weight:400; opacity:0.85;">27th Aug 2026</span>
+      </div>
+      <div class="round-tab" id="tab-r3" onclick="setRound(3)">
+        Round 3<br><span style="font-size:10px; font-weight:400; opacity:0.85;">Grand Finale · 25th Oct</span>
+      </div>
     </div>
     <div class="note-box" id="roundNote" style="margin-bottom:0;">
-      <strong>Round 1:</strong> Submit your team details and select your problem statement. No ILS registration required at this stage.
+      <strong>Round 1</strong> (Deadline: 31st July 2026): Submit your team details and problem statement. No ILS registration required at this stage.
     </div>
   </div>
 
-  <!-- ILS REGISTRATION DETAILS (Round 3 only) -->
+  <!-- ILS DETAILS — Round 3 only -->
   <div class="card" id="ilsCard" style="display:none;">
     <div class="card-title">
       <svg width="18" height="18" fill="none" stroke="#b8005e" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8L2 7h20L16 3z"/></svg>
@@ -221,8 +224,8 @@
     <div class="info-banner">
       <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:1px;"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
       <div>
-        <div class="info-banner-title">⚠️ ILS Registration Required for Round 3</div>
-        <div class="info-banner-text">It is <strong style="color:white;">compulsory to register for IEEE WIE ILS 2026</strong> before Round 3. Keep your <strong style="color:white;">ILS Registration ID</strong> and <strong style="color:white;">payment screenshot</strong> ready.</div>
+        <div class="info-banner-title">⚠️ ILS Registration Mandatory for Grand Finale</div>
+        <div class="info-banner-text">ILS participation is compulsory for Grand Finale qualifiers. Keep your <strong style="color:white;">ILS Registration ID</strong> and <strong style="color:white;">payment screenshot</strong> ready.</div>
       </div>
     </div>
     <div class="field-row">
@@ -273,7 +276,7 @@
       <svg width="16" height="16" fill="none" stroke="#b8005e" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
     </a>
 
-    <div class="note-box">Teams must select <strong>one track and one problem statement</strong> — switching after Round 1 submission is not allowed.</div>
+    <div class="note-box">Teams must select <strong>one track and one problem statement</strong>. Switching tracks after submission is not allowed. Original ideas and solutions only.</div>
 
     <div class="field-row">
       <label for="track">Track <span class="req">*</span></label>
@@ -288,12 +291,13 @@
       </div>
     </div>
 
-    <div id="problemSelectRow">
+    <!-- Tracks 1–3: dropdown -->
+    <div id="problemSelectRow" style="display:none;">
       <div class="field-row">
         <label for="problemStatement">Problem Statement <span class="req">*</span></label>
         <div class="select-wrap">
           <select id="problemStatement" onchange="showProblemDesc()">
-            <option value="">Select track first</option>
+            <option value="">Select problem statement</option>
           </select>
         </div>
       </div>
@@ -303,22 +307,56 @@
       </div>
     </div>
 
-    <div id="industryUploadRow" style="display:none;">
-      <div class="note-box">For <strong>Track 4: Open Industry Problems</strong>, upload the problem statement PDF provided by your industry partner.</div>
-      <div class="field-row">
-        <label for="pdfFile">Industry Problem Statement PDF <span class="req">*</span></label>
-        <div class="file-zone" id="fileZone">
-          <input type="file" accept=".pdf" id="pdfFile" onchange="handleFile(this)">
-          <svg class="file-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          <div class="upload-label">Click to upload Problem Statement PDF</div>
-          <div class="upload-hint">PDF only · Max 5 MB</div>
-          <div class="file-name-display" id="fileNameDisplay"></div>
+    <!-- Track 4: 3 radio options -->
+    <div id="track4Row" style="display:none;">
+      <label style="margin-bottom:10px; display:block;">Problem Statement <span class="req">*</span></label>
+
+      <div class="track4-option" id="t4opt1" onclick="selectTrack4Option('P9')">
+        <input type="radio" name="track4choice" id="t4r1" value="P9">
+        <div>
+          <div class="track4-option-label">P9: Inclusive Public Transport Intelligence Platform</div>
+          <div class="track4-option-desc">Build an AI-driven urban transit optimisation platform that makes public transport reliable and safe for female commuters using real-time data and automated anomaly detection.</div>
+        </div>
+      </div>
+
+      <div class="track4-option" id="t4opt2" onclick="selectTrack4Option('P10')">
+        <input type="radio" name="track4choice" id="t4r2" value="P10">
+        <div>
+          <div class="track4-option-label">P10: Secure Supply Chain Tracking for Women Entrepreneurs</div>
+          <div class="track4-option-desc">Build an IoT-enabled cargo tracking and tamper-detection system to help women-led enterprises securely ship products to distant urban markets with real-time monitoring and alerts.</div>
+        </div>
+      </div>
+
+      <div class="track4-option" id="t4opt3" onclick="selectTrack4Option('SELF')">
+        <input type="radio" name="track4choice" id="t4r3" value="SELF">
+        <div>
+          <div class="track4-option-label">I have my own industry problem statement</div>
+          <div class="track4-option-desc">Your team has identified a real-world industry problem. Describe it below and upload supporting documentation if available.</div>
+        </div>
+      </div>
+
+      <!-- Self-identified problem: description + optional PDF -->
+      <div id="selfProblemRow" style="display:none; margin-top:12px;">
+        <div class="field-row">
+          <label for="selfProblemDesc">Describe Your Problem Statement <span class="req">*</span></label>
+          <textarea id="selfProblemDesc" placeholder="Briefly describe the industry problem your team has identified (100–300 words)..."></textarea>
+        </div>
+        <div class="field-row">
+          <label for="pdfFile">Supporting Document (PDF) <span style="font-size:11px; color:#9b7ab0; font-weight:400;">— Optional</span></label>
+          <div class="file-zone" id="fileZone">
+            <input type="file" accept=".pdf" id="pdfFile" onchange="handleFile(this)">
+            <svg class="file-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <div class="upload-label">Click to upload supporting document (optional)</div>
+            <div class="upload-hint">PDF only · Max 5 MB</div>
+            <div class="file-name-display" id="fileNameDisplay"></div>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 
-  <!-- TEAM LEADER (Member 1) -->
+  <!-- MEMBER 1 — TEAM LEADER -->
   <div class="card">
     <div class="card-title">
       <svg width="18" height="18" fill="none" stroke="#b8005e" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -328,6 +366,8 @@
       <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       Required · All details
     </div>
+    <div class="note-box" style="margin-bottom:1rem; font-size:11.5px;">Team size: <strong>1–6 members</strong>. At least <strong>one female member is compulsory</strong> across the team.</div>
+
     <div class="two-col">
       <div class="field-row">
         <label for="m1Name">Full Name <span class="req">*</span></label>
@@ -361,7 +401,8 @@
         <div class="select-wrap">
           <select id="m1Year">
             <option value="">Select year</option>
-            <option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>Postgraduate</option><option>PhD / Research</option>
+            <option>1st Year</option><option>2nd Year</option><option>3rd Year</option>
+            <option>4th Year</option><option>Postgraduate</option><option>PhD / Research</option>
           </select>
         </div>
       </div>
@@ -371,43 +412,24 @@
       </div>
     </div>
     <div class="field-row">
-      <label for="m1Ieee">IEEE Membership Number</label>
-      <input type="text" id="m1Ieee" placeholder="Optional — if applicable">
+      <label for="m1Ieee">IEEE Membership Number <span style="font-size:11px; color:#9b7ab0; font-weight:400;">— Optional</span></label>
+      <input type="text" id="m1Ieee" placeholder="If applicable">
     </div>
   </div>
 
   <!-- MEMBERS 2–6 -->
   <div id="membersSection">
-
     <!-- MEMBER 2 -->
     <div class="card" id="memberCard2">
       <div class="card-title">
         <svg width="18" height="18" fill="none" stroke="#b8005e" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Member 2
-        <span class="optional-tag">Optional</span>
+        Member 2 <span class="optional-tag">Optional</span>
       </div>
-      <div class="note-box" style="margin-bottom:1rem; font-size:11.5px;">At least <strong>1 female member</strong> is compulsory across the team. Minimum 1, maximum 6 members total.</div>
       <div class="two-col">
-        <div class="field-row">
-          <label for="m2Name">Full Name</label>
-          <input type="text" id="m2Name" placeholder="First and last name">
-        </div>
-        <div class="field-row">
-          <label for="m2Gender">Gender</label>
-          <div class="select-wrap">
-            <select id="m2Gender">
-              <option value="">Select</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Other">Other / Prefer not to say</option>
-            </select>
-          </div>
-        </div>
+        <div class="field-row"><label for="m2Name">Full Name</label><input type="text" id="m2Name" placeholder="First and last name"></div>
+        <div class="field-row"><label for="m2Gender">Gender</label><div class="select-wrap"><select id="m2Gender"><option value="">Select</option><option value="Female">Female</option><option value="Male">Male</option><option value="Other">Other / Prefer not to say</option></select></div></div>
       </div>
-      <div class="field-row">
-        <label for="m2Phone">Contact Number</label>
-        <input type="tel" id="m2Phone" placeholder="+91 XXXXX XXXXX">
-      </div>
+      <div class="field-row"><label for="m2Phone">Contact Number</label><input type="tel" id="m2Phone" placeholder="+91 XXXXX XXXXX"></div>
     </div>
 
     <!-- MEMBER 3 -->
@@ -417,26 +439,10 @@
         Member 3 <span class="optional-tag">Optional</span>
       </div>
       <div class="two-col">
-        <div class="field-row">
-          <label for="m3Name">Full Name</label>
-          <input type="text" id="m3Name" placeholder="First and last name">
-        </div>
-        <div class="field-row">
-          <label for="m3Gender">Gender</label>
-          <div class="select-wrap">
-            <select id="m3Gender">
-              <option value="">Select</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Other">Other / Prefer not to say</option>
-            </select>
-          </div>
-        </div>
+        <div class="field-row"><label for="m3Name">Full Name</label><input type="text" id="m3Name" placeholder="First and last name"></div>
+        <div class="field-row"><label for="m3Gender">Gender</label><div class="select-wrap"><select id="m3Gender"><option value="">Select</option><option value="Female">Female</option><option value="Male">Male</option><option value="Other">Other / Prefer not to say</option></select></div></div>
       </div>
-      <div class="field-row">
-        <label for="m3Phone">Contact Number</label>
-        <input type="tel" id="m3Phone" placeholder="+91 XXXXX XXXXX">
-      </div>
+      <div class="field-row"><label for="m3Phone">Contact Number</label><input type="tel" id="m3Phone" placeholder="+91 XXXXX XXXXX"></div>
     </div>
 
     <!-- MEMBER 4 -->
@@ -446,26 +452,10 @@
         Member 4 <span class="optional-tag">Optional</span>
       </div>
       <div class="two-col">
-        <div class="field-row">
-          <label for="m4Name">Full Name</label>
-          <input type="text" id="m4Name" placeholder="First and last name">
-        </div>
-        <div class="field-row">
-          <label for="m4Gender">Gender</label>
-          <div class="select-wrap">
-            <select id="m4Gender">
-              <option value="">Select</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Other">Other / Prefer not to say</option>
-            </select>
-          </div>
-        </div>
+        <div class="field-row"><label for="m4Name">Full Name</label><input type="text" id="m4Name" placeholder="First and last name"></div>
+        <div class="field-row"><label for="m4Gender">Gender</label><div class="select-wrap"><select id="m4Gender"><option value="">Select</option><option value="Female">Female</option><option value="Male">Male</option><option value="Other">Other / Prefer not to say</option></select></div></div>
       </div>
-      <div class="field-row">
-        <label for="m4Phone">Contact Number</label>
-        <input type="tel" id="m4Phone" placeholder="+91 XXXXX XXXXX">
-      </div>
+      <div class="field-row"><label for="m4Phone">Contact Number</label><input type="tel" id="m4Phone" placeholder="+91 XXXXX XXXXX"></div>
     </div>
 
     <!-- MEMBER 5 -->
@@ -475,26 +465,10 @@
         Member 5 <span class="optional-tag">Optional</span>
       </div>
       <div class="two-col">
-        <div class="field-row">
-          <label for="m5Name">Full Name</label>
-          <input type="text" id="m5Name" placeholder="First and last name">
-        </div>
-        <div class="field-row">
-          <label for="m5Gender">Gender</label>
-          <div class="select-wrap">
-            <select id="m5Gender">
-              <option value="">Select</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Other">Other / Prefer not to say</option>
-            </select>
-          </div>
-        </div>
+        <div class="field-row"><label for="m5Name">Full Name</label><input type="text" id="m5Name" placeholder="First and last name"></div>
+        <div class="field-row"><label for="m5Gender">Gender</label><div class="select-wrap"><select id="m5Gender"><option value="">Select</option><option value="Female">Female</option><option value="Male">Male</option><option value="Other">Other / Prefer not to say</option></select></div></div>
       </div>
-      <div class="field-row">
-        <label for="m5Phone">Contact Number</label>
-        <input type="tel" id="m5Phone" placeholder="+91 XXXXX XXXXX">
-      </div>
+      <div class="field-row"><label for="m5Phone">Contact Number</label><input type="tel" id="m5Phone" placeholder="+91 XXXXX XXXXX"></div>
     </div>
 
     <!-- MEMBER 6 -->
@@ -504,29 +478,12 @@
         Member 6 <span class="optional-tag">Optional</span>
       </div>
       <div class="two-col">
-        <div class="field-row">
-          <label for="m6Name">Full Name</label>
-          <input type="text" id="m6Name" placeholder="First and last name">
-        </div>
-        <div class="field-row">
-          <label for="m6Gender">Gender</label>
-          <div class="select-wrap">
-            <select id="m6Gender">
-              <option value="">Select</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Other">Other / Prefer not to say</option>
-            </select>
-          </div>
-        </div>
+        <div class="field-row"><label for="m6Name">Full Name</label><input type="text" id="m6Name" placeholder="First and last name"></div>
+        <div class="field-row"><label for="m6Gender">Gender</label><div class="select-wrap"><select id="m6Gender"><option value="">Select</option><option value="Female">Female</option><option value="Male">Male</option><option value="Other">Other / Prefer not to say</option></select></div></div>
       </div>
-      <div class="field-row">
-        <label for="m6Phone">Contact Number</label>
-        <input type="tel" id="m6Phone" placeholder="+91 XXXXX XXXXX">
-      </div>
+      <div class="field-row"><label for="m6Phone">Contact Number</label><input type="tel" id="m6Phone" placeholder="+91 XXXXX XXXXX"></div>
     </div>
-
-  </div><!-- /membersSection -->
+  </div>
 
   <button class="submit-btn" id="submitBtn" onclick="submitForm()">
     <svg id="sendIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -544,44 +501,43 @@
     <span id="errorText">Something went wrong. Please try again.</span>
   </div>
 
-  <p class="footer-note">IEEE WIE International Leadership Summit 2026 · ieeegujaratsection.org</p>
+  <p class="footer-note">IEEE WIE ILS 2026 National Hackathon · wieils2026@gmail.com · +91 94277 92999 · ieeegujaratsection.org</p>
 </div>
 
 <script>
   const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzCE_5af5FMh3KpNwzGjewGPA0WJN6TA3Aj_7MDE2NJWQpE2SotltKJhYPBSve_bBKklg/exec";
 
   let currentRound = 1;
+  let track4Choice = ""; // "P9", "P10", or "SELF"
 
   const roundNotes = {
-    1: "<strong>Round 1:</strong> Submit your team details and select your problem statement. No ILS registration required at this stage.",
-    2: "<strong>Round 2:</strong> Confirm your team and problem statement. No ILS registration required at this stage.",
-    3: "<strong>Round 3:</strong> ILS registration and payment confirmation are required. Enter your ILS Registration ID and upload your payment screenshot below."
+    1: "<strong>Round 1</strong> (Deadline: 31st July 2026): Submit your team details and problem statement. No ILS registration required at this stage.",
+    2: "<strong>Round 2</strong> (27th August 2026): Confirm your team and problem statement. No ILS registration required at this stage.",
+    3: "<strong>Round 3 — Grand Finale</strong> (25th October 2026, SVNIT Surat): ILS registration and payment confirmation are required below."
   };
 
   function setRound(r) {
     currentRound = r;
-    [1,2,3].forEach(n => {
-      document.getElementById('tab-r'+n).classList.toggle('active', n === r);
-    });
+    [1,2,3].forEach(n => document.getElementById('tab-r'+n).classList.toggle('active', n===r));
     document.getElementById('roundNote').innerHTML = roundNotes[r];
-    document.getElementById('ilsCard').style.display = r === 3 ? 'block' : 'none';
+    document.getElementById('ilsCard').style.display = r===3 ? 'block' : 'none';
   }
 
-  // ── PROBLEM STATEMENTS ──
+  // ── PROBLEM STATEMENTS (Tracks 1–3) ──
   const problemsByTrack = {
     "Track 1: Bharat Rising (Rural India & EdTech)": [
-      { id:"P1", title:"The Middleman Killer", desc:"Farmers lose 20–30% of their income because mandi buyers form cartels and control price information. Build a real-time price discovery and direct-trade platform that works in low-connectivity areas, resists price manipulation, and is simple enough for a first-time smartphone user." },
-      { id:"P2", title:"Disaster Response Without Infrastructure", desc:"During floods, earthquakes, or cyclones, connectivity and power often fail completely, cutting off relief teams and victims. Build an offline mesh-network system (e.g. LoRa/Bluetooth) for location-tagged SOS signals, rescue coordination, and a shared, continuously updated resource map — with zero internet dependency." },
-      { id:"P3", title:"Gamified Vocational Learning for School Children", desc:"Many rural children drop out because classroom learning feels disconnected from their lives. Build a game-based learning platform with two age tiers (9–12 and 12–15) that teaches practical vocational skills — electrical repair, stitching, farming techniques, carpentry — through missions, characters, and rewards." }
+      { id:"P1", title:"The Middleman Killer", desc:"Build a real-time price discovery and auction platform to help farmers get fair prices directly by eliminating middlemen. Must work in low-connectivity areas and be simple enough for first-time smartphone users." },
+      { id:"P2", title:"Disaster Response Without Infrastructure", desc:"Develop a mesh-network emergency communication system for disaster-hit rural areas with no internet or power. Must support location-tagged SOS signals, rescue coordination, and a shared resource map offline." },
+      { id:"P3", title:"Gamified Vocational Learning for School Children", desc:"Create a game-based learning platform to teach vocational skills (electrical repair, stitching, farming, carpentry) through engaging missions and rewards, with two age tiers: 9–12 and 12–15 years." }
     ],
     "Track 2: HealthTech": [
-      { id:"P4", title:"The Polypharmacy Crisis", desc:"Elderly patients often see multiple doctors who prescribe medicines independently, creating risky drug combinations. Build an AI system that reads prescriptions in any format (scanned, photographed, typed), flags dangerous interactions, explains the risk in plain language for both doctor and patient, and suggests safer alternatives." }
+      { id:"P4", title:"The Polypharmacy Crisis", desc:"Build an AI system that detects harmful drug interactions from multiple prescriptions and explains risks in simple language to both doctors and patients, with suggestions for safer alternatives." }
     ],
     "Track 3: SheLeads (WIE Special Track)": [
-      { id:"P5", title:"Safe Route Navigator", desc:"Standard navigation apps optimize for speed, not safety. Build an app that scores routes for women travelling alone based on crime data, crowd density, lighting, and community reports — recommending the safest route (not just the fastest) and updating scores dynamically as new incidents are reported." },
-      { id:"P6", title:"SheShield Wearable", desc:"A manual SOS button is too slow in an emergency. Build a wearable that passively detects distress (heart-rate spikes, abnormal movement, loud sounds), silently triggers an alert without tipping off an attacker, captures audio/video evidence, shares live location with emergency contacts and police, and keeps transmitting even if the phone is lost or switched off." },
-      { id:"P7", title:"Skill to Income Platform for Rural Women", desc:"Rural women with marketable skills (e.g. block-printing) often can't reach buyers. Build a platform where they can photograph their work, get help with listings and fair pricing, find buyers, arrange logistics, receive payments, and build a trusted seller reputation — usable on a basic smartphone in at least three Indian languages." },
-      { id:"P8", title:"Nutrition Tracker for Pregnant & Lactating Women", desc:"Generic nutrition apps suggest foods that aren't locally available or affordable. Build a diet planner that factors in local seasonal produce, household budget, regional cooking habits, and pregnancy/lactation stage — producing WHO-aligned weekly meal plans presented visually with icons in local languages for users with limited literacy." }
+      { id:"P5", title:"Safe Route Navigator", desc:"Build an app that suggests the safest routes for women travelling alone based on crime data, crowd density, lighting, and community reports — updating scores dynamically as new incidents are reported." },
+      { id:"P6", title:"SheShield Wearable", desc:"Create a wearable that detects distress (heart-rate spikes, abnormal movement, loud sounds) and silently alerts emergency contacts with live location, audio, and video evidence — even without a phone." },
+      { id:"P7", title:"Skill to Income Platform", desc:"Build a platform for women to learn market-relevant skills, photograph and list their work with fair pricing, find buyers, arrange logistics, receive payments, and build a trusted seller reputation in at least three Indian languages." },
+      { id:"P8", title:"Nutrition Tracker for Women & Girls", desc:"Develop a simple app that tracks nutrition and health to help women and girls stay healthy — factoring in local seasonal produce, household budget, and regional cooking habits with WHO-aligned meal plans." }
     ]
   };
 
@@ -590,17 +546,21 @@
   function handleTrackChange() {
     const track = document.getElementById('track').value;
     const sel = document.getElementById('problemStatement');
-    const selectRow = document.getElementById('problemSelectRow');
-    const uploadRow = document.getElementById('industryUploadRow');
-    sel.innerHTML = '<option value="">Select problem statement</option>';
     document.getElementById('problemDescBox').style.display = 'none';
     document.getElementById('track').classList.remove('error');
+    sel.innerHTML = '<option value="">Select problem statement</option>';
+
     if (track === INDUSTRY_TRACK) {
-      selectRow.style.display = 'none';
-      uploadRow.style.display = 'block';
+      document.getElementById('problemSelectRow').style.display = 'none';
+      document.getElementById('track4Row').style.display = 'block';
+      // reset track4
+      track4Choice = "";
+      ['t4opt1','t4opt2','t4opt3'].forEach(id => document.getElementById(id).classList.remove('selected'));
+      document.querySelectorAll('input[name="track4choice"]').forEach(r => r.checked = false);
+      document.getElementById('selfProblemRow').style.display = 'none';
     } else if (problemsByTrack[track]) {
-      selectRow.style.display = 'block';
-      uploadRow.style.display = 'none';
+      document.getElementById('problemSelectRow').style.display = 'block';
+      document.getElementById('track4Row').style.display = 'none';
       problemsByTrack[track].forEach(p => {
         const opt = document.createElement('option');
         opt.value = p.id + ": " + p.title;
@@ -611,8 +571,8 @@
       const d = document.getElementById("fileNameDisplay");
       if (d) d.style.display = 'none';
     } else {
-      selectRow.style.display = 'block';
-      uploadRow.style.display = 'none';
+      document.getElementById('problemSelectRow').style.display = 'none';
+      document.getElementById('track4Row').style.display = 'none';
     }
   }
 
@@ -620,8 +580,7 @@
     const track = document.getElementById('track').value;
     const v = document.getElementById('problemStatement').value;
     const id = v.split(":")[0].trim();
-    const list = problemsByTrack[track] || [];
-    const p = list.find(x => x.id === id);
+    const p = (problemsByTrack[track]||[]).find(x => x.id === id);
     const box = document.getElementById('problemDescBox');
     if (p) {
       document.getElementById('problemDescTitle').textContent = p.id + ": " + p.title;
@@ -631,6 +590,16 @@
     document.getElementById('problemStatement').classList.remove('error');
   }
 
+  function selectTrack4Option(choice) {
+    track4Choice = choice;
+    ['t4opt1','t4opt2','t4opt3'].forEach(el => document.getElementById(el).classList.remove('selected'));
+    const map = { P9:'t4opt1', P10:'t4opt2', SELF:'t4opt3' };
+    const radMap = { P9:'t4r1', P10:'t4r2', SELF:'t4r3' };
+    document.getElementById(map[choice]).classList.add('selected');
+    document.getElementById(radMap[choice]).checked = true;
+    document.getElementById('selfProblemRow').style.display = choice==='SELF' ? 'block' : 'none';
+  }
+
   // ── FILE HANDLING ──
   let pdfBase64 = "", pdfFileName = "";
   let paymentBase64 = "", paymentFileName = "", paymentMimeType = "";
@@ -638,178 +607,151 @@
   function handleFile(input) {
     const file = input.files[0];
     if (!file) return;
-    if (file.type !== "application/pdf") { showError("Only PDF files are accepted."); input.value = ""; return; }
-    if (file.size > 5*1024*1024) { showError("PDF must be under 5 MB."); input.value = ""; return; }
+    if (file.type !== "application/pdf") { showError("Only PDF files are accepted."); input.value=""; return; }
+    if (file.size > 5*1024*1024) { showError("PDF must be under 5 MB."); input.value=""; return; }
     pdfFileName = file.name;
-    const reader = new FileReader();
-    reader.onload = e => {
+    new FileReader().onload = e => {
       pdfBase64 = e.target.result.split(",")[1];
       const d = document.getElementById("fileNameDisplay");
-      d.textContent = "✓ " + file.name; d.style.display = "block";
+      d.textContent="✓ "+file.name; d.style.display="block";
     };
-    reader.readAsDataURL(file);
+    const fr = new FileReader(); fr.onload = e => {
+      pdfBase64 = e.target.result.split(",")[1];
+      const d = document.getElementById("fileNameDisplay");
+      d.textContent="✓ "+file.name; d.style.display="block";
+    }; fr.readAsDataURL(file);
   }
 
   function handlePaymentFile(input) {
     const file = input.files[0];
     if (!file) return;
     if (!["application/pdf","image/jpeg","image/png"].includes(file.type)) {
-      showError("Payment screenshot must be PDF, JPG, or PNG."); input.value = ""; return;
+      showError("Payment screenshot must be PDF, JPG, or PNG."); input.value=""; return;
     }
-    if (file.size > 5*1024*1024) { showError("Payment file must be under 5 MB."); input.value = ""; return; }
-    paymentFileName = file.name; paymentMimeType = file.type;
-    const reader = new FileReader();
-    reader.onload = e => {
+    if (file.size > 5*1024*1024) { showError("Payment file must be under 5 MB."); input.value=""; return; }
+    paymentFileName=file.name; paymentMimeType=file.type;
+    const fr = new FileReader(); fr.onload = e => {
       paymentBase64 = e.target.result.split(",")[1];
       const d = document.getElementById("paymentFileName");
-      d.textContent = "✓ " + file.name; d.style.display = "block";
-      document.getElementById("paymentZone").style.borderColor = "#c9a0e8";
-    };
-    reader.readAsDataURL(file);
+      d.textContent="✓ "+file.name; d.style.display="block";
+      document.getElementById("paymentZone").style.borderColor="#c9a0e8";
+    }; fr.readAsDataURL(file);
   }
 
   // ── HELPERS ──
-  function gv(id) { return document.getElementById(id).value.trim(); }
+  function gv(id) { const el=document.getElementById(id); return el?el.value.trim():""; }
   function showError(msg) {
-    const el = document.getElementById("errorMsg");
-    document.getElementById("errorText").textContent = msg;
-    el.style.display = "block";
-    el.scrollIntoView({ behavior:"smooth", block:"center" });
+    const el=document.getElementById("errorMsg");
+    document.getElementById("errorText").textContent=msg;
+    el.style.display="block";
+    el.scrollIntoView({behavior:"smooth",block:"center"});
   }
   function clearMessages() {
-    document.getElementById("successMsg").style.display = "none";
-    document.getElementById("errorMsg").style.display = "none";
+    document.getElementById("successMsg").style.display="none";
+    document.getElementById("errorMsg").style.display="none";
   }
   function setLoading(on) {
-    const btn = document.getElementById("submitBtn");
-    document.getElementById("spinner").style.display = on ? "block" : "none";
-    document.getElementById("sendIcon").style.display = on ? "none" : "block";
-    document.getElementById("btnText").textContent = on ? "Submitting…" : "Submit Registration";
-    btn.disabled = on;
+    document.getElementById("spinner").style.display=on?"block":"none";
+    document.getElementById("sendIcon").style.display=on?"none":"block";
+    document.getElementById("btnText").textContent=on?"Submitting…":"Submit Registration";
+    document.getElementById("submitBtn").disabled=on;
   }
-  function markError(id) { document.getElementById(id).classList.add("error"); }
-  function clearErrors() {
-    document.querySelectorAll("input.error, select.error").forEach(el => el.classList.remove("error"));
-  }
+  function markError(id) { const el=document.getElementById(id); if(el) el.classList.add("error"); }
+  function clearErrors() { document.querySelectorAll(".error").forEach(el=>el.classList.remove("error")); }
 
-  // ── VALIDATION & SUBMIT ──
+  // ── SUBMIT ──
   function submitForm() {
     clearMessages(); clearErrors();
     let firstError = null;
 
     // Round 3: ILS fields
-    if (currentRound === 3) {
-      if (!gv("ilsRegId")) { markError("ilsRegId"); firstError = firstError || "ILS Registration ID"; }
+    if (currentRound===3) {
+      if (!gv("ilsRegId")) { markError("ilsRegId"); firstError=firstError||"ILS Registration ID"; }
       if (!paymentBase64) {
-        document.getElementById("paymentZone").style.borderColor = "#b8005e";
-        firstError = firstError || "Payment Screenshot";
+        document.getElementById("paymentZone").style.borderColor="#b8005e";
+        firstError=firstError||"Payment Screenshot";
       }
     }
 
-    // Team fields
-    ["teamName","college"].forEach(id => {
-      if (!gv(id)) { markError(id); firstError = firstError || id; }
-    });
-
-    // Track
-    if (!gv("track")) { markError("track"); firstError = firstError || "Track"; }
+    // Team
+    if (!gv("teamName")) { markError("teamName"); firstError=firstError||"Team Name"; }
+    if (!gv("college")) { markError("college"); firstError=firstError||"College / Institution"; }
+    if (!gv("track")) { markError("track"); firstError=firstError||"Track"; }
 
     // Problem statement
     const track = gv("track");
-    if (track === INDUSTRY_TRACK) {
-      if (!pdfBase64) {
-        document.getElementById("fileZone").style.borderColor = "#b8005e";
-        firstError = firstError || "Industry Problem Statement PDF";
+    let finalProblemStatement = "";
+    if (track===INDUSTRY_TRACK) {
+      if (!track4Choice) { firstError=firstError||"Problem Statement (Track 4)"; }
+      else if (track4Choice==="SELF") {
+        finalProblemStatement = "Self-identified: " + gv("selfProblemDesc");
+        if (!gv("selfProblemDesc")) { markError("selfProblemDesc"); firstError=firstError||"Problem description"; }
+      } else {
+        const labels={P9:"P9: Inclusive Public Transport Intelligence Platform",P10:"P10: Secure Supply Chain Tracking for Women Entrepreneurs"};
+        finalProblemStatement = labels[track4Choice];
       }
-    } else if (track && !gv("problemStatement")) {
-      markError("problemStatement"); firstError = firstError || "Problem Statement";
+    } else if (track) {
+      finalProblemStatement = gv("problemStatement");
+      if (!finalProblemStatement) { markError("problemStatement"); firstError=firstError||"Problem Statement"; }
     }
 
-    // Member 1 (leader) required fields
+    // Member 1 required fields
     ["m1Name","m1Gender","m1Email","m1Phone","m1Year","m1Dept"].forEach(id => {
-      if (!gv(id)) { markError(id); firstError = firstError || "Member 1 " + id.replace("m1",""); }
+      if (!gv(id)) { markError(id); firstError=firstError||("Member 1 "+id.replace("m1","")); }
     });
 
-    // Female member check — across all filled members
+    // Female member check
     const genders = [gv("m1Gender")];
-    for (let i = 2; i <= 6; i++) {
-      const name = gv("m"+i+"Name");
-      if (name) genders.push(gv("m"+i+"Gender"));
-    }
-    const hasFemale = genders.some(g => g === "Female");
-    if (!hasFemale) {
-      firstError = firstError || "female_member";
-      // highlight gender selects of filled members
-      for (let i = 1; i <= 6; i++) {
-        const nameEl = i===1 ? document.getElementById("m1Name") : document.getElementById("m"+i+"Name");
-        if (nameEl && nameEl.value.trim()) markError("m"+i+"Gender");
-      }
+    for (let i=2;i<=6;i++) { if (gv("m"+i+"Name")) genders.push(gv("m"+i+"Gender")); }
+    if (!genders.some(g=>g==="Female")) {
+      for (let i=1;i<=6;i++) { const n=i===1?document.getElementById("m1Name"):document.getElementById("m"+i+"Name"); if(n&&n.value.trim()) markError("m"+i+"Gender"); }
+      firstError=firstError||"female_member";
     }
 
     if (firstError) {
-      const msg = firstError === "female_member"
-        ? "At least one female member is compulsory. Please set the Gender field for a female team member."
-        : "Please fill in all required fields. Missing: " + firstError;
-      showError(msg);
-      document.querySelector(".error")?.scrollIntoView({ behavior:"smooth", block:"center" });
+      showError(firstError==="female_member"
+        ? "At least one female member is compulsory. Please select 'Female' in the Gender field for a team member."
+        : "Please fill in all required fields. Missing: "+firstError);
+      document.querySelector(".error")?.scrollIntoView({behavior:"smooth",block:"center"});
       return;
     }
 
-    // Build members array
-    const members = [];
-    for (let i = 2; i <= 6; i++) {
-      const name = gv("m"+i+"Name");
-      if (name) members.push({ name, gender: gv("m"+i+"Gender"), phone: gv("m"+i+"Phone") });
-    }
+    // Build members 2–6
+    const members=[];
+    for(let i=2;i<=6;i++) { const n=gv("m"+i+"Name"); if(n) members.push({name:n,gender:gv("m"+i+"Gender"),phone:gv("m"+i+"Phone")}); }
 
-    const payload = {
-      round:            "Round " + currentRound,
-      timestamp:        new Date().toLocaleString("en-IN", { timeZone:"Asia/Kolkata" }),
-      ilsRegId:         currentRound === 3 ? gv("ilsRegId") : "",
-      paymentFileName:  currentRound === 3 ? paymentFileName : "",
-      paymentMimeType:  currentRound === 3 ? paymentMimeType : "",
-      paymentBase64:    currentRound === 3 ? paymentBase64 : "",
-      teamName:         gv("teamName"),
-      college:          gv("college"),
-      track:            gv("track"),
-      problemStatement: gv("problemStatement"),
-      leaderName:       gv("m1Name"),
-      leaderGender:     gv("m1Gender"),
-      leaderEmail:      gv("m1Email"),
-      leaderPhone:      gv("m1Phone"),
-      leaderYear:       gv("m1Year"),
-      leaderDept:       gv("m1Dept"),
-      leaderIeee:       gv("m1Ieee"),
-      members:          JSON.stringify(members),
-      pdfFileName:      pdfFileName,
-      pdfBase64:        pdfBase64
+    const payload={
+      round:"Round "+currentRound,
+      timestamp:new Date().toLocaleString("en-IN",{timeZone:"Asia/Kolkata"}),
+      ilsRegId:currentRound===3?gv("ilsRegId"):"",
+      paymentFileName:currentRound===3?paymentFileName:"",
+      paymentMimeType:currentRound===3?paymentMimeType:"",
+      paymentBase64:currentRound===3?paymentBase64:"",
+      teamName:gv("teamName"), college:gv("college"),
+      track, problemStatement:finalProblemStatement,
+      track4Choice: track===INDUSTRY_TRACK?track4Choice:"",
+      leaderName:gv("m1Name"), leaderGender:gv("m1Gender"),
+      leaderEmail:gv("m1Email"), leaderPhone:gv("m1Phone"),
+      leaderYear:gv("m1Year"), leaderDept:gv("m1Dept"), leaderIeee:gv("m1Ieee"),
+      members:JSON.stringify(members),
+      pdfFileName, pdfBase64
     };
 
     setLoading(true);
-    fetch(WEBAPP_URL, {
-      method:"POST", mode:"no-cors",
-      headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(payload)
-    })
-    .then(() => {
+    fetch(WEBAPP_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+    .then(()=>{
       setLoading(false);
-      document.getElementById("successMsg").style.display = "block";
-      document.getElementById("successMsg").scrollIntoView({ behavior:"smooth" });
-      document.querySelectorAll("input, select").forEach(el => el.value = "");
-      pdfBase64 = ""; pdfFileName = "";
-      paymentBase64 = ""; paymentFileName = ""; paymentMimeType = "";
-      ["fileNameDisplay","paymentFileName"].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = "none";
-      });
-      document.getElementById("fileZone").style.borderColor = "";
-      document.getElementById("paymentZone").style.borderColor = "";
+      document.getElementById("successMsg").style.display="block";
+      document.getElementById("successMsg").scrollIntoView({behavior:"smooth"});
+      document.querySelectorAll("input,select,textarea").forEach(el=>el.value="");
+      pdfBase64=""; pdfFileName=""; paymentBase64=""; paymentFileName=""; paymentMimeType=""; track4Choice="";
+      ["fileNameDisplay","paymentFileName"].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display="none";});
+      document.getElementById("fileZone").style.borderColor="";
+      document.getElementById("paymentZone").style.borderColor="";
+      ['t4opt1','t4opt2','t4opt3'].forEach(id=>document.getElementById(id).classList.remove('selected'));
+      document.getElementById('selfProblemRow').style.display='none';
     })
-    .catch(err => {
-      setLoading(false);
-      showError("Network error. Please check your connection and try again.");
-      console.error(err);
-    });
+    .catch(err=>{setLoading(false);showError("Network error. Please check your connection and try again.");console.error(err);});
   }
 </script>
 </body>
